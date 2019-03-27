@@ -14,6 +14,8 @@ int main()
     int resultadoMultiplicacion;
     int resultadoFactorial;
     int resultadoFactorial2;
+    int flag;
+    flag=0;
     num1=0;
     num2=0;
 
@@ -22,16 +24,71 @@ int main()
         printf("\nTRABAJO PRACTICO Nª1\n");
 
         printf("1) Ingresar 1er operando(A=%d)\n",num1);
+
         printf("2) Ingresar 2do operando(B=%d)\n",num2);
+
         printf("3) Calcular todas las operaciones\n");
+        /*resultadoSuma=fsumar(num1,num2);
+        resultadoResta=frestar(num1,num2);
+        resultadoDivision=fdivision(num1,num2);
+        resultadoMultiplicacion=fmultiplicacion(num1,num2);
+        resultadoFactorial=ffactorial(num1);
+        resultadoFactorial2=ffactorial(num2);
+
+
+
         printf("  a) Calcular la suma (%d+%d)\n",num1,num2);
         printf("  b) Calcular la resta (%d-%d)\n",num1,num2);
         printf("  c) Calcular la division(%d/%d)\n",num1,num2);
         printf("  d) Calcular la multiplicacion(%d*%d)\n",num1,num2);
-        printf("  e) Calcular el factorial (%d!)\n",num1);
+        printf("  e) Calcular el factorial (%d!)\n",num1);*/
         printf("4) Informar resultados \n");
         printf("5) Salir.\n");
+        /*printf("El resultado de %d+%d es: %d\n",num1,num2,resultadoSuma);
+        printf("El resultado de %d-%d es: %d\n",num1,num2,resultadoResta);
+        if(num1==0||num2==0)
+        {
+            printf("No es posible dividir por cero\n");
+        }
+        else
+        {
+            if(num1%num2!=0)
+        {
+        printf("El resultado de %d/%d es: %f\n",num1,num2,resultadoDivision);
+
+                }
+                else
+                {
+                    printf("El resultado de %d/%d es: %.0f\n",num1,num2,resultadoDivision);
+                }
+
+            }
+
+            printf("El resultado de %d*%d es: %d\n",num1,num2,resultadoMultiplicacion);
+            if(num1==0)
+            {
+                printf("No puede realizarse el factorial de %d\n",num1);
+            }
+            else
+            {
+                printf("El factorial de %d es: %d\n",num1,resultadoFactorial);
+
+            }
+            if(num2==0)
+            {
+                printf("No puede realizarse el factorial de %d\n",num2);
+            }
+            else
+            {
+                printf("El factorial de %d es: %d\n",num2,resultadoFactorial2);
+
+            }*/
+
+
+
         scanf("%d",&opcion);
+
+
         while(opcion>5 || opcion<1)
         {
             printf("La opcion ingresada es incorrecta.\n");
@@ -54,33 +111,44 @@ int main()
             resultadoMultiplicacion=fmultiplicacion(num1,num2);
             resultadoFactorial=ffactorial(num1);
             resultadoFactorial2=ffactorial(num2);
+            int flag=1;
             break;
             case 4:
-            printf("El resultado de %d+%d es: %d\n",num1,num2,resultadoSuma);
-            printf("El resultado de %d-%d es: %d\n",num1,num2,resultadoResta);
-            if(num1==0||num2==0)
+            if(flag==1)
             {
-                printf("No es posible dividir por cero\n");
-            }
-            else
-            {
-                if(num1%num2!=0)
+                printf("El resultado de %d+%d es: %d\n",num1,num2,resultadoSuma);
+                printf("El resultado de %d-%d es: %d\n",num1,num2,resultadoResta);
+                if(num1==0||num2==0)
                 {
-                    printf("El resultado de %d/%d es: %f\n",num1,num2,resultadoDivision);
-
+                    printf("No es posible dividir por cero\n");
                 }
                 else
                 {
+                    if(num1%num2!=0)
+                    {
+                        printf("El resultado de %d/%d es: %f\n",num1,num2,resultadoDivision);
+
+                    }
+                    else
+                    {
                     printf("El resultado de %d/%d es: %.0f\n",num1,num2,resultadoDivision);
+                    }
+
                 }
 
+                printf("El resultado de %d*%d es: %d\n",num1,num2,resultadoMultiplicacion);
+                printf("El factorial de %d es: %d y El factorial de %d es %d\n",num1,resultadoFactorial,num2,resultadoFactorial2);
+                system(("pause"));
+                flag=0;
+            }
+            else
+            {
+                printf("Primero debe realizar todas las operaciones\n ");
             }
 
-            printf("El resultado de %d*%d es: %d\n",num1,num2,resultadoMultiplicacion);
-            printf("El factorial de %d es: %d y El factorial de %d es %d\n",num1,resultadoFactorial,num2,resultadoFactorial2);
-            system(("pause"));
             break;
         }
+
 
     }
 

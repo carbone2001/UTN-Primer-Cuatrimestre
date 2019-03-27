@@ -32,6 +32,26 @@ int ffactorial(int x)
     int i;
     int fact;
     fact=x;
+
+    if(x<0)
+    {
+        fact=(-1);
+    }
+    else if(x==0)
+    {
+        fact=1;
+    }
+    else
+    {
+        int i;
+        int fact;
+        fact=x;
+        for(i=1;i<x;i++)
+        {
+            fact=fact*i;
+        }
+    }
+
     for(i=1;i<x;i++)
     {
         fact=fact*i;
