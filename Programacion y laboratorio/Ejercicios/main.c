@@ -3,17 +3,19 @@
 
 int main()
 {
-
+    int nums[5];
     int i;
-
-    for(i=0;i<=100;i++)
+    for(i=0;i<5;i++)
     {
-        if(i%6==0 && i!=0)
-        {
-            printf("%d \n",i);
-        }
-
+        printf("Ingrese un numero: ");
+        scanf("%d",&nums[i]);
     }
+    printf("\nLos numeros ingresados son:");
+    for(i=0;i<5;i++)
+    {
+        printf(" %d ",vector[i]);
+    }
+
 
     return 0;
 }
