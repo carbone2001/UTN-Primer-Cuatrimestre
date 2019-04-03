@@ -1,21 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main()
 {
-    int nums[5];
-    int i;
-    for(i=0;i<5;i++)
-    {
-        printf("Ingrese un numero: ");
-        scanf("%d",&nums[i]);
-    }
-    printf("\nLos numeros ingresados son:");
-    for(i=0;i<5;i++)
-    {
-        printf(" %d ",vector[i]);
-    }
-
+   char cadena[50];
+   fflush(stdin);
+   fgets(cadena);
+   printf("%s",cadena);
 
     return 0;
 }
