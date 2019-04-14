@@ -2,106 +2,176 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#define TAM_VEC 5
+#define CANT 3
 struct agenda
 {
-    char nombre[20];
-    char apellido[20];
-    char calle[30];
-    int altura;
+    char nombre[31];
+    char apellido[31];
+    int legajo;
 };
+
 
 int main()
 {
-    struct agenda persona[TAM_VEC],aux;
-    int i;
+    struct agenda persona[CANT];
+    struct agenda datoNulo;
+    char cadAux[100];
+    int i=0;
+    int opcion;
+    int opcionBaja;
+    int error=0;
     int j;
+    int k;
+    int l;
+    int contador=0;
 
-    //HARCODEO
-    strcpy(persona[0].nombre,"lucas");
-    strcpy(persona[0].apellido,"carbone");
-    strcpy(persona[0].calle,"852");
-    persona[0].altura=2317;
+    strcpy(datoNulo.nombre,"Vacio");
+    strcpy(datoNulo.apellido,"Vacio");
+    datoNulo.legajo=0;
 
-    strcpy(persona[1].nombre,"juan");
-    strcpy(persona[1].apellido,"perez");
-    strcpy(persona[1].calle,"893");
-    persona[1].altura=4765;
-
-    strcpy(persona[2].nombre,"luis");
-    strcpy(persona[2].apellido,"espert");
-    strcpy(persona[2].calle,"Mitre");
-    persona[2].altura=750;
-
-    strcpy(persona[3].nombre,"alberto");
-    strcpy(persona[3].apellido,"spineta");
-    strcpy(persona[3].calle,"Arredondo");
-    persona[3].altura=940;
-
-    strcpy(persona[4].nombre,"gustavo");
-    strcpy(persona[4].apellido,"cerati");
-    strcpy(persona[4].calle,"Humberto Primo");
-    persona[4].altura=3544;
-
-
-
-    printf("Tamaño de personas es %d\n",TAM_VEC);
-    /*
-    for(i=0; i<TAM_VEC; i++)
+    while(opcion!=4)
     {
-        printf("Ingresar nombre persona %d\n",i+1);
-        fflush(stdin);
-        gets(persona[i].nombre);
-        printf("Ingresar apellido persona %d\n",i+1);
-        fflush(stdin);
-        gets(persona[i].apellido);
-        printf("Ingresar la calle de la persona %d\n",i+1);
-        gets(persona[i].calle);
-        printf("Ingresar altura (direccion) de la persona %d\n",i+1);
-        scanf("%d",&persona[i].altura);
-    }
-    */
-    printf("Antes del ordenamiento\n");
-    for(i=0; i<TAM_VEC; i++)
-    {
-        printf("Persona %d se llama %s %s, su calle es %s y su altura es %d\n",i+1,persona[i].nombre,persona[i].apellido,persona[i].calle,persona[i].altura);
-    }
-    printf("\n\nDespues del ordenamiento\n");
-    for(i=0; i<TAM_VEC-1; i++)
-    {
-        for(j=i+1; j<TAM_VEC; j++)
+        printf(" 1. Realizar una alta\n 2. Realizar una baja \n 3. Mostrar listado por apellidos\n 4. Salir\n Seleccione opcion: ");
+        scanf("%d",&opcion);
+        switch(opcion)
         {
-            if(strcmp(persona[i].nombre,persona[j].nombre)>0)
+        case 1:
+            printf("Ingrese nombre de la persona %d\n",i+1);
+            setbuf(stdin,NULL);
+            gets(persona[i].nombre);
+            strcpy(cadAux,persona[i].nombre);
+            while(strlen(cadAux)>30)
             {
-                aux=persona[i];
-                persona[i]=persona[j];
-                persona[j]=aux;
+                printf("El nombre no puede ser mayor de los 30 caracteres\n");
+                printf("Ingrese nombre de la persona %d\n",i+1);
+                setbuf(stdin,NULL);
+                gets(persona[i].nombre);
+                strcpy(cadAux,persona[i].nombre);
+
             }
+            printf("Ingrese apellido de la persona %d\n",i+1);
+            setbuf(stdin,NULL);
+            gets(persona[i].apellido);
+            strcpy(cadAux,persona[i].apellido);
+            while(strlen(cadAux)>30)
+            {
+                printf("El nombre no puede ser mayor de los 30 caracteres\n");
+                printf("Ingrese apellido de la persona %d\n",i+1);
+                setbuf(stdin,NULL);
+                gets(persona[i].apellido);
+                strcpy(cadAux,persona[i].apellido);
+            }
+            printf("Ingrese legajo de la persona %d\n",i+1);
+            scanf("%d",&persona[i].legajo);
+            while(error==0 && i>0)
+            {
+
+                if(error==0)
+                {
+                    for(j=0; j<i; j++)
+                    {
+                        if(persona[j].legajo==persona[i].legajo)
+                        {
+                            error=1;
+                            break;
+                        }
+                    }
+
+                }
+                while(error==1)
+                {
+                    printf("El legajo ingresado ya existe. Ingrese otro numero de legajo: ");
+                    scanf("%d",&persona[i].legajo);
+                    if(persona[j].legajo==persona[i].legajo)
+                    {
+                        error=1;
+                    }
+                    else
+                    {
+                        error=2;
+                    }
+                }
+                error=2;
+            }
+            contador++;
+            i++;
+            break;
+        case 2:
+            printf("A que persona desea realizarle la baja?");
+            scanf("%d",&opcionBaja);
+            printf("La persona %d ha sido dada de baja\n",opcionBaja);
+            persona[opcionBaja-1]=datoNulo;
+            break;
+            case 3:
+            for(k=0; k<contador; k++)
+            {
+                strlwr(persona[k].apellido);
+            }
+            for(j=0; j<contador-1; j++)
+            {
+
+                for(l=j+1;l<contador;l++)
+                {
+                    if(strcmp(persona[j].apellido,persona[l].apellido)>0)
+                    {
+                        char auxCad[31];
+                        strcpy(auxCad,persona[j].apellido);
+                        strcpy(persona[j].apellido,persona[l].apellido);
+                        strcpy(persona[l].apellido,auxCad);
+                    }
+
+                }
+
+
+            }
+            for(j=0; j<contador; j++)
+            {
+                printf("Pesona %d: Nombre: %s Apellido: %s Legajo: %d\n",j+1,persona[j].nombre,persona[j].apellido,persona[j].legajo);
+            }
+            break;
+
         }
-    }
-    for(i=0; i<TAM_VEC; i++)
-    {
-        printf("Persona %d se llama %s %s, su calle es %s y su altura es %d\n",i+1,persona[i].nombre,persona[i].apellido,persona[i].calle,persona[i].altura);
+
+
     }
 
-    //ORDENAMIENTO POR INSERCION
-    for(i=1; i<TAM_VEC; i++)
+
+    /*for(i=0; i<CANT; i++)
     {
-        aux=persona[i];
-        j=i-1;
-        while((strcmp(persona[i].nombre,persona[j].nombre)<0)&& j>=0)
+        printf("Ingrese nombre de la persona %d\n",i+1);
+        setbuf(stdin,NULL);
+        gets(persona[i].nombre);
+        strcpy(cadAux,persona[i].nombre);
+        while(strlen(cadAux)>30)
         {
-
-            persona[j+1]=persona[j];
-            j--;
+            printf("El nombre no puede ser mayor de los 30 caracteres\n");
+            printf("Ingrese nombre de la persona %d\n",i+1);
+            setbuf(stdin,NULL);
+            gets(persona[i].nombre);
+            strcpy(cadAux,persona[i].nombre);
         }
-        persona[j+1]=aux;
+        printf("Ingrese apellido de la persona %d\n",i+1);
+        setbuf(stdin,NULL);
+        gets(persona[i].apellido);
+        strcpy(cadAux,persona[i].apellido);
+        while(strlen(cadAux)>30)
+        {
+            printf("El nombre no puede ser mayor de los 30 caracteres\n");
+            printf("Ingrese apellido de la persona %d\n",i+1);
+            setbuf(stdin,NULL);
+            gets(persona[i].apellido);
+            strcpy(cadAux,persona[i].apellido);
+        }
+        printf("Ingrese legajo de la persona %d\n",i+1);
+        scanf("%d",&persona[i].legajo);
     }
-    printf("\n\nDespues del ordenamiento por insercion\n");
-    for(i=0; i<TAM_VEC; i++)
+
+    for(i=0; i<CANT; i++)
     {
-        printf("Persona %d se llama %s %s, su calle es %s y su altura es %d\n",i+1,persona[i].nombre,persona[i].apellido,persona[i].calle,persona[i].altura);
-    }
+        printf("Pesona %d: Nombre: %s Apellido: %s Legajo: %d\n",i+1,persona[i].nombre,persona[i].apellido,persona[i].legajo);
+    }*/
+
+
 
 
     return 0;
