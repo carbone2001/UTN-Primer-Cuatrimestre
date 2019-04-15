@@ -29,38 +29,13 @@ int main()
     strcpy(datoNulo.apellido,"Vacio");
     datoNulo.legajo=0;
 
-    while(opcion!=4)
+    while(opcion!=6)
     {
-        printf(" 1. Realizar una alta\n 2. Realizar una baja \n 3. Mostrar listado por apellidos\n 4. Salir\n Seleccione opcion: ");
+        printf(" 1. Alta empleados\n 2. Baja empleados \n 3. Modificacion empleado\n 4. Listar\n 5. Ordenar\n 6. Salir\n Ingrese opcion: ");
         scanf("%d",&opcion);
         switch(opcion)
         {
         case 1:
-            printf("Ingrese nombre de la persona %d\n",i+1);
-            setbuf(stdin,NULL);
-            gets(persona[i].nombre);
-            strcpy(cadAux,persona[i].nombre);
-            while(strlen(cadAux)>30)
-            {
-                printf("El nombre no puede ser mayor de los 30 caracteres\n");
-                printf("Ingrese nombre de la persona %d\n",i+1);
-                setbuf(stdin,NULL);
-                gets(persona[i].nombre);
-                strcpy(cadAux,persona[i].nombre);
-
-            }
-            printf("Ingrese apellido de la persona %d\n",i+1);
-            setbuf(stdin,NULL);
-            gets(persona[i].apellido);
-            strcpy(cadAux,persona[i].apellido);
-            while(strlen(cadAux)>30)
-            {
-                printf("El nombre no puede ser mayor de los 30 caracteres\n");
-                printf("Ingrese apellido de la persona %d\n",i+1);
-                setbuf(stdin,NULL);
-                gets(persona[i].apellido);
-                strcpy(cadAux,persona[i].apellido);
-            }
             printf("Ingrese legajo de la persona %d\n",i+1);
             scanf("%d",&persona[i].legajo);
             while(error==0 && i>0)
@@ -93,6 +68,32 @@ int main()
                 }
                 error=2;
             }
+            printf("Ingrese nombre de la persona %d\n",i+1);
+            setbuf(stdin,NULL);
+            gets(persona[i].nombre);
+            strcpy(cadAux,persona[i].nombre);
+            while(strlen(cadAux)>30)
+            {
+                printf("El nombre no puede ser mayor de los 30 caracteres\n");
+                printf("Ingrese nombre de la persona %d\n",i+1);
+                setbuf(stdin,NULL);
+                gets(persona[i].nombre);
+                strcpy(cadAux,persona[i].nombre);
+
+            }
+            printf("Ingrese apellido de la persona %d\n",i+1);
+            setbuf(stdin,NULL);
+            gets(persona[i].apellido);
+            strcpy(cadAux,persona[i].apellido);
+            while(strlen(cadAux)>30)
+            {
+                printf("El nombre no puede ser mayor de los 30 caracteres\n");
+                printf("Ingrese apellido de la persona %d\n",i+1);
+                setbuf(stdin,NULL);
+                gets(persona[i].apellido);
+                strcpy(cadAux,persona[i].apellido);
+            }
+
             contador++;
             i++;
             break;
@@ -102,7 +103,7 @@ int main()
             printf("La persona %d ha sido dada de baja\n",opcionBaja);
             persona[opcionBaja-1]=datoNulo;
             break;
-            case 3:
+        case 5:
             for(k=0; k<contador; k++)
             {
                 strlwr(persona[k].apellido);
@@ -110,7 +111,7 @@ int main()
             for(j=0; j<contador-1; j++)
             {
 
-                for(l=j+1;l<contador;l++)
+                for(l=j+1; l<contador; l++)
                 {
                     if(strcmp(persona[j].apellido,persona[l].apellido)>0)
                     {
