@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1554888184 source:c:\users\lucas\desktop\utn-primer-cuatrimestre\hiperprogramasejercicios\main.c
+1555451958 source:c:\users\lucas\desktop\utn-primer-cuatrimestre\hiperprogramasejercicios\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	<string.h>
+	<conio.h>
 
 1554895799 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\hiperprogramasejercicios\main.c
 	<stdio.h>
