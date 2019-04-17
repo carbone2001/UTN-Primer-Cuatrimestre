@@ -1,9 +1,11 @@
 # depslib dependency file v1.0
-1555328589 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\main.c
+1555507069 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\main.c
 	<stdio.h>
 	<stdlib.h>
-	<string.h>
 	<ctype.h>
+	<string.h>
+	<conio.h>
+	"biblioteca.h"
 
 1555451869 source:c:\users\lucas\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\main.c
 	<stdio.h>
@@ -11,4 +13,14 @@
 	<ctype.h>
 	<string.h>
 	<conio.h>
+
+1555506324 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\biblioteca.c
+	<ctype.h>
+	<string.h>
+	<conio.h>
+	<stdio.h>
+	<stdlib.h>
+	"biblioteca.h"
+
+1555505159 c:\users\alumno\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\biblioteca.h
 
