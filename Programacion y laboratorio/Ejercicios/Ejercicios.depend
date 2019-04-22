@@ -7,12 +7,13 @@
 	<conio.h>
 	"biblioteca.h"
 
-1555451869 source:c:\users\lucas\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\main.c
+1555535824 source:c:\users\lucas\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	<string.h>
 	<conio.h>
+	"biblioteca.h"
 
 1555506324 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\biblioteca.c
 	<ctype.h>
@@ -23,4 +24,14 @@
 	"biblioteca.h"
 
 1555505159 c:\users\alumno\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\biblioteca.h
+
+1555619237 source:c:\users\lucas\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\biblioteca.c
+	<ctype.h>
+	<string.h>
+	<conio.h>
+	<stdio.h>
+	<stdlib.h>
+	"biblioteca.h"
+
+1555535698 c:\users\lucas\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\biblioteca.h
 

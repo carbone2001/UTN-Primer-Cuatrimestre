@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define TAM 20
+#define TAM 5
+#define TAM_SEC 4
 #include <ctype.h>
 #include <string.h>
 #include <conio.h>
@@ -8,8 +9,11 @@
 int main()
 {
     char salir='n';
-    empleado emp[TAM]= {{1423,"Juan",'m',13500,{1,10,1998},1},{1001,"Lucas",'m',65000,{10,01,2001},1},{6543,"Sol",'f',32000,{23,04,1999},0},{3265,"Alberto",'m',15437.78,{15,06,1989},1},{2876,"Cristal",'f',45700.65,{21,11,2000},1}};
+    int selecSec;
+    empleado emp[TAM]= {{1423,"Juan",'m',13500,{1,10,1998},19002,1},{1001,"Lucas",'m',65000,{10,01,2001},19002,1},{6543,"Sol",'f',32000,{23,04,1999},19003,1},{3265,"Alberto",'m',15437.78,{15,06,1989},19004,1},{2876,"Cristal",'f',45700.65,{21,11,2000},19002,1}};
+    eSector sectores[TAM_SEC] = {{19001,"Ventas"},{19002,"Finanzas"},{19003,"Sistemas"},{19004,"RRHH"}};
     //inicializarEmpleados(emp,TAM);
+
     while(salir!='s')
     {
         switch(menu())
@@ -30,7 +34,16 @@ int main()
         case 5:
             ordenarEmpleados(emp,TAM);
             break;
+        /*case 7:
+            listarSectores(sectores,TAM_SEC,selecSec,emp,TAM);
+            break;*/
         case 6:
+            listarSectores(sectores,TAM_SEC,emp,TAM);
+            printf("Ingrese el sector que desee listar en particular: ");
+            scanf("%d",&selecSec);
+            listarSector(sectores,TAM_SEC,selecSec,emp,TAM);
+            break;
+        case 7:
             printf("Seguro que quiere salir? s/n \n");
             salir=getche();
             salir=tolower(salir);

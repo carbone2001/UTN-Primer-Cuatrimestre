@@ -18,14 +18,12 @@ typedef struct
 } eFecha;
 typedef struct
 {
-    int legajo;
     char nombre[20];
-    char sexo;
-    float sueldo;
-    eFecha fechaNac;
-    int idSector;
+    char apellido[20];
+    int cuit;
+    int id;
     int estado;
-} empleado;
+} cliente;
 int menu();
 void altaEmpleado(empleado emp[], int tam);
 void bajaEmpleado(empleado emp[],int tam);

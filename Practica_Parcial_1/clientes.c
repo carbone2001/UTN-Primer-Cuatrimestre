@@ -3,86 +3,86 @@
 #include <conio.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "biblioteca.h"
+#include "clientes.h"
 int menu()
 {
     int opcion;
-    printf("\n***  ABM Empleados  ***\n");
-    printf("1. Alta empleado.\n");
-    printf("2. Baja empleado.\n");
-    printf("3. Modificar\n");
-    printf("4. Listar empleado\n");
-    printf("5. Ordenar empleado\n");
-    printf("6. Listar sectores\n");
-    printf("7. Salir\n");
+    printf("\n***  ABM Clientes  ***\n");
+    printf("1. Alta de cliente.\n");
+    printf("2. Modificar datos de cliente.\n");
+    printf("3. Baja de cliente\n");
+    printf("4. Publicar\n");
+    printf("5. Pausar publicación\n");
+    printf("6. Reanudar publicación\n");
+    printf("7. Imprimir Clientes\n");
+    printf("8. Imprimir publicaciones\n");
+    printf("9. Informar clientes\n");
+    printf("10. Informar publicaciones\n");
     scanf("%d",&opcion);
     return opcion;
 }
-void altaEmpleado(empleado emp[],int tam)
+void altaCliente(cliente cli[],int tam)
 {
-    int legajo;
-    int sameLegajo;
+    int id;
+    int sameId;
     int free;
-    free=buscarLibre(emp,tam);
+    free=buscarLibre(cli,tam);
     if(free==-1)
     {
         printf("\nNo se ha encontrado un lugar en el sistema.\n");
     }
     else
     {
-        printf("Ingrese legajo: ");
-        scanf("%d",&legajo);
-        sameLegajo=buscarLegajo(emp,tam,legajo);
-        if(sameLegajo!=-1)
+
+        sameId=buscarId(cli,tam,id);
+        if(sameId!=-1)
         {
-            printf("\nEl legajo ingresado ya existe\n");
-            mostrarEmpleado(emp[sameLegajo]);
+            printf("\nEl ID ingresado ya existe\n");
+            mostrarCliente(cli[sameId]);
         }
         else
         {
-            emp[free].legajo=legajo;
+
             printf("\nIngrese Nombre: ");
             fflush(stdin);
-            gets(emp[free].nombre);
-            printf("\nIngrese sexo: ");
+            gets(cli[free].nombre);
+            printf("Ingrese apellido");
             fflush(stdin);
-            scanf("%c",&emp[free].sexo);
-            emp[free].sexo=tolower(emp[free].sexo);
-            printf("\nIngrese su sueldo: ");
-            scanf("%f",&emp[free].sueldo);
-            printf("\nIngrese fecha de nacimiento: ");
-            printf("\nDia: ");
-            scanf("%d",&emp[free].fechaNac.dia);
-            printf("\nMes: ");
-            scanf("%d",&emp[free].fechaNac.mes);
-            printf("\nAnio: ");
-            scanf("%d",&emp[free].fechaNac.anio);
-            printf("Ingrese ID del sector a pertenecer: ");
-            scanf("%d",&emp[free].idSector);
-            emp[free].estado=1;
-            fflush(stdin);
+            gets(cli[free].apellido);
+            printf("Ingrese CUIT");
+            scanf("%d",&cli[free].cuit);
+            id=getRandom(0,99999,1);
+            sameId=buscarId(cli,tam,id);
+            while(sameId==id)
+            {
+                id=getRandom(0,99999,0);
+                sameId=buscarId(cli,tam,id);
+
+            }
+            cli[free].id=id;
+            printf("La alta del cliente ha sido exitosa. El ID: %d",cli[free].id);
         }
     }
 }
-void bajaEmpleado(empleado emp[],int tam)
+void bajaCliente(cliente cli[],int tam)
 {
-    int legajo;
-    int empleado;
-    printf("\nIngrese legajo para dar de baja: ");
-    scanf("%d",&legajo);
-    empleado=buscarLegajo(emp,tam,legajo);
-    if(empleado==-1)
+    int id;
+    int cliente;
+    printf("\nIngrese ID del cliente para dar de baja: ");
+    scanf("%d",&id);
+    cliente=buscarId(cli,tam,id);
+    if(cliente==-1)
     {
-        printf("El empleado seleccionado no existe");
+        printf("El cliente seleccionado no existe");
     }
     else
     {
-        emp[empleado].estado=0;
-        printf("El empleado de legajo %d fue dado de baja con exito!!!",emp[empleado].legajo);
+        cli[cliente].estado=0;
+        printf("El cliente de ID: %d fue dado de baja con exito!!!",cli[cliente].id);
     }
 
 }
-void modificarEmpleado(empleado emp[],int tam)
+/*void modificarEmpleado(cliente cli[],int tam)
 {
     int legajo;
     int empleado;
@@ -170,7 +170,7 @@ void modificarEmpleado(empleado emp[],int tam)
         }
     }
 }
-void ordenarEmpleados(empleado emp[],int tam)
+void ordenarEmpleados(cliente cli[],int tam)
 {
     int opcion=0;
     while(opcion!=5)
@@ -214,23 +214,23 @@ void ordenarEmpleados(empleado emp[],int tam)
             break;
         }
     }
-}
+}*/
 
-void inicializarEmpleados(empleado emp[],int tam)
+void inicializarCliente(cliente cli[],int tam)
 {
     int i;
     for(i=0; i<tam; i++)
     {
-        emp[i].estado=0;
+        cli[i].estado=0;
     }
 }
-int buscarLibre(empleado emp[],int tam)
+int buscarLibre(cliente cli[],int tam)
 {
     int i;
     int lugarLibre=-1;
     for(i=0; i<tam; i++)
     {
-        if(emp[i].estado==0)
+        if(cli[i].estado==0)
         {
             lugarLibre=i;
             break;
@@ -238,25 +238,25 @@ int buscarLibre(empleado emp[],int tam)
     }
     return lugarLibre;
 }
-int buscarLegajo(empleado emp[],int tam,int legajo)
+int buscarId(cliente cli[],int tam,int id)
 {
-    int sameLegajo=-1;
+    int sameId=-1;
     int i;
     for(i=0; i<tam; i++)
     {
-        if(emp[i].estado==1 && emp[i].legajo==legajo)
+        if(cli[i].estado==1 && cli[i].id==id)
         {
-            sameLegajo=i;
+            sameId=i;
             break;
         }
     }
-    return sameLegajo;
+    return sameId;
 }
-void mostrarEmpleado(empleado emp)
+void mostrarCliente(cliente cli)
 {
-    printf("%5d %10s        %1c     %.2f    %2d/%2d/%4d",emp.legajo,emp.nombre,emp.sexo,emp.sueldo,emp.fechaNac.dia,emp.fechaNac.mes,emp.fechaNac.anio);
+    printf("%5d %20s     %20     %11d        ",cli.id,cli.nombre,cli.apellido,cli.cuit);
 }
-void mostrarEmpleados(empleado emp[],int tam)
+/*void mostrarEmpleados(empleado emp[],int tam)
 {
     int i;
     int contador;
@@ -265,7 +265,7 @@ void mostrarEmpleados(empleado emp[],int tam)
     {
         if(emp[i].estado==1)
         {
-            printf("\n %5d %10s        %1c     %.2f    %02d/%02d/%4d\n",emp[i].legajo,emp[i].nombre,emp[i].sexo,emp[i].sueldo,emp[i].fechaNac.dia,emp[i].fechaNac.mes,emp[i].fechaNac.anio);
+           printf("%5d %20s     %20     %11d        ",cli[i].id,cli[i].nombre,cli[i].apellido,cli[i].cuit);
             contador++;
         }
     }
@@ -314,8 +314,8 @@ void ordenarNombres(empleado emp[],int tam)
             }
         }
     }
-}
-void ordenarSexos(empleado emp[],int tam)
+}*/
+/*void ordenarSexos(empleado emp[],int tam)
 {
     int i=1;
     int j;
@@ -337,9 +337,9 @@ void ordenarSexos(empleado emp[],int tam)
             }
         }
     }
-}
+}*/
 
-void ordenarSueldos(empleado emp[],int tam)
+/*void ordenarSueldos(empleado emp[],int tam)
 {
     int i=1;
     int j;
@@ -356,8 +356,8 @@ void ordenarSueldos(empleado emp[],int tam)
             }
         }
     }
-}
-void listarSector(eSector sector[],int tamSec, int idIngresado,empleado emp[],int tamEmp)
+}*/
+/*void listarSector(eSector sector[],int tamSec, int idIngresado,empleado emp[],int tamEmp)
 {
     int i;
     int j;
@@ -373,8 +373,8 @@ void listarSector(eSector sector[],int tamSec, int idIngresado,empleado emp[],in
             }
         }
     }
-}
-void listarSectores(eSector sectores[],int tamSec,empleado emp[],int tamEmp)
+}*/
+/*void listarSectores(eSector sectores[],int tamSec,empleado emp[],int tamEmp)
 {
     int i;
     int j;
@@ -391,3 +391,4 @@ void listarSectores(eSector sectores[],int tamSec,empleado emp[],int tamEmp)
     }
 }
 
+*/
