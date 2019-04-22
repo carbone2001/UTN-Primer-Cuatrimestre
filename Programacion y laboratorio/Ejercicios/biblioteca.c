@@ -13,8 +13,9 @@ int menu()
     printf("3. Modificar\n");
     printf("4. Listar empleado\n");
     printf("5. Ordenar empleado\n");
-    printf("6. Listar sectores\n");
-    printf("7. Salir\n");
+    printf("6. Mostrar sectores con empleados\n");
+    printf("7. Mostrar cantidad de empleados por sector\n");
+    printf("8. Salir\n");
     scanf("%d",&opcion);
     return opcion;
 }
@@ -36,7 +37,7 @@ void altaEmpleado(empleado emp[],int tam)
         if(sameLegajo!=-1)
         {
             printf("\nEl legajo ingresado ya existe\n");
-            mostrarEmpleado(emp[sameLegajo]);
+            //mostrarEmpleado(sec,tam,emp[sameLegajo]);
         }
         else
         {
@@ -82,7 +83,7 @@ void bajaEmpleado(empleado emp[],int tam)
     }
 
 }
-void modificarEmpleado(empleado emp[],int tam)
+void modificarEmpleado(eSector sec[],int tamSec,empleado emp[],int tam)
 {
     int legajo;
     int empleado;
@@ -120,7 +121,7 @@ void modificarEmpleado(empleado emp[],int tam)
                 if(sameLegajo!=-1)
                 {
                     printf("\nEl legajo ingresado ya existe\n");
-                    mostrarEmpleado(emp[sameLegajo]);
+                    mostrarEmpleado(sec,tamSec,emp[sameLegajo]);
                 }
                 else
                 {
@@ -252,12 +253,16 @@ int buscarLegajo(empleado emp[],int tam,int legajo)
     }
     return sameLegajo;
 }
-void mostrarEmpleado(empleado emp)
+void mostrarEmpleado(eSector sec[],int tamSec,empleado emp)
 {
-    printf("%5d %10s        %1c     %.2f    %2d/%2d/%4d",emp.legajo,emp.nombre,emp.sexo,emp.sueldo,emp.fechaNac.dia,emp.fechaNac.mes,emp.fechaNac.anio);
+    char nombreSector[10];
+    buscarSector(sec,tamSec,emp.idSector,nombreSector);
+    printf("%5d %10s        %1c     %.2f    %2d/%2d/%4d    %s",emp.legajo,emp.nombre,emp.sexo,emp.sueldo,emp.fechaNac.dia,emp.fechaNac.mes,emp.fechaNac.anio,nombreSector);
 }
-void mostrarEmpleados(empleado emp[],int tam)
+void mostrarEmpleados(eSector sec[],int tamSec,empleado emp[],int tam)
 {
+    char nombreSector[10];
+
     int i;
     int contador;
     contador=0;
@@ -265,7 +270,8 @@ void mostrarEmpleados(empleado emp[],int tam)
     {
         if(emp[i].estado==1)
         {
-            printf("\n %5d %10s        %1c     %.2f    %02d/%02d/%4d\n",emp[i].legajo,emp[i].nombre,emp[i].sexo,emp[i].sueldo,emp[i].fechaNac.dia,emp[i].fechaNac.mes,emp[i].fechaNac.anio);
+            buscarSector(sec,tamSec,emp[i].idSector,nombreSector);
+            printf("\n %5d %10s        %1c     %.2f    %02d/%02d/%4d       %s\n",emp[i].legajo,emp[i].nombre,emp[i].sexo,emp[i].sueldo,emp[i].fechaNac.dia,emp[i].fechaNac.mes,emp[i].fechaNac.anio,nombreSector);
             contador++;
         }
     }
@@ -385,9 +391,41 @@ void listarSectores(eSector sectores[],int tamSec,empleado emp[],int tamEmp)
         {
             if(sectores[i].id==emp[j].idSector)
             {
-                printf("\n %5d %10s        %1c     %.2f    %02d/%02d/%4d\n",emp[i].legajo,emp[i].nombre,emp[i].sexo,emp[i].sueldo,emp[i].fechaNac.dia,emp[i].fechaNac.mes,emp[i].fechaNac.anio);
+                printf("\n %5d %10s        %1c     %.2f    %02d/%02d/%4d\n\n",emp[j].legajo,emp[j].nombre,emp[j].sexo,emp[j].sueldo,emp[j].fechaNac.dia,emp[j].fechaNac.mes,emp[j].fechaNac.anio);
             }
         }
+    }
+}
+void buscarSector(eSector sec[],int tam, int id, char desc[])
+{
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        if(id==sec[i].id)
+        {
+            strcpy(desc,sec[i].desc);
+            break;
+        }
+    }
+
+}
+void cantidadEmpSector(eSector sec[],int tamSec,empleado emp[],int tam)
+{
+    int i;
+    int j;
+    int contador;
+    for(i=0;i<tamSec;i++)
+    {
+        contador=0;
+        for(j=0;j<tam;j++)
+        {
+            if(emp[j].idSector==sec[i].id)
+            {
+                contador++;
+            }
+        }
+        printf("\nEl sector: %s tiene %d empleados",sec[i].desc,contador);
+
     }
 }
 
