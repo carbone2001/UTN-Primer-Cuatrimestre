@@ -24,7 +24,7 @@ int buscarId(cliente cli[],int tam,int legajo);
 int buscarLibre(cliente cli[],int tam);
 int buscarCliente(cliente cli[],int tam,int id);
 void mostrarCliente(cliente cli);
-//void printClientes(cliente cli[],int tam,publicacion pub[],int tamPub);
+void printClientes(cliente cli[],int tam,publicacion pub[],int tamPub);
 void mostrarClientes(cliente cli[],int tam);
 void ordenarId(cliente cli[],int tam);
 void ordenarNombres(cliente cli[],int tam);

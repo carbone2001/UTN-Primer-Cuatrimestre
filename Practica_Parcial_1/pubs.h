@@ -1,4 +1,4 @@
-
+#include "clientes.h"
 typedef struct
 {
     int idCli;
@@ -12,6 +12,9 @@ typedef struct
  * \param El tamanio del vector
  */
 void inicializarPubs(publicacion pub[],int tam);
-void publicarPub(publicacion pub[],int tam);
+void publicarPub(publicacion pub[],int tamPub,cliente cli[],int tam);
 int buscarLibrePub(publicacion pub[],int tam);
 int buscarIdPub(publicacion pub[],int tam,int id);
+void printClientes(cliente cli[],int tam,publicacion pub[], int tamPub);
+void pausarPub(publicacion pub[],int tamPub,cliente cli[],int tam);
+void reanudarPub(publicacion pub[],int tamPub,cliente cli[],int tam);

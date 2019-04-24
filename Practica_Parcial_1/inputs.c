@@ -16,7 +16,7 @@ int getIntIntentos(int* input,char* msj,char* eMsj,int minimo,int maximo,int rei
     {
         if(reintentos)
         {
-            for(i=0;i<reintentos;i++)
+            for(i=0; i<reintentos; i++)
             {
                 printf("%s",eMsj);
                 scanf("%d",&num);
@@ -105,15 +105,53 @@ void getFloatPlus(float*input,char*msj,char*eMsj,int minimo,int maximo) //TERMIN
         scanf("%f",input);
     }
 }
-int getString(char str[],int limite)
+int getString(char str[],char*msj,char*eMsj,int limite,int intentos)
 {
     int error;
+    int contador;
+    contador=0;
     error=0;
-    fflush(stdin);
-    gets(str);
-    if(strlen(str)>limite)
+    if(intentos!=0)
     {
-        error=1;
+        printf(msj);
+        fflush(stdin);
+        gets(str);
+        contador++;
+        while(strlen(str)>limite && contador<intentos)
+        {
+            printf(msj);
+            fflush(stdin);
+            gets(str);
+            if(strlen(str)<=limite)
+            {
+                error=0;
+                break;
+            }
+            printf(eMsj);
+            error=1;
+            contador++;
+        }
+    }
+    else
+    {
+        printf(msj);
+        fflush(stdin);
+        gets(str);
+        while(strlen(str)>limite)
+        {
+            printf(msj);
+            fflush(stdin);
+            gets(str);
+            if(strlen(str)<=limite)
+            {
+                error=0;
+                break;
+            }
+            printf(eMsj);
+            error=1;
+            contador++;
+        }
+
     }
     return error;
 }

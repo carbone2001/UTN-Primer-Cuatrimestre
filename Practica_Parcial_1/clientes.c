@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "clientes.h"
+#include "inputs.h"
+#include "pubs.h"
 int menu()
 {
     int opcion;
@@ -12,8 +14,8 @@ int menu()
     printf("2. Modificar datos de cliente.\n");
     printf("3. Baja de cliente\n");
     printf("4. Publicar\n");
-    printf("5. Pausar publicación\n");
-    printf("6. Reanudar publicación\n");
+    printf("5. Pausar publicacion\n");
+    printf("6. Reanudar publicacion\n");
     printf("7. Imprimir Clientes\n");
     printf("8. Imprimir publicaciones\n");
     printf("9. Informar clientes\n");
@@ -34,34 +36,21 @@ void altaCliente(cliente cli[],int tam)
     else
     {
 
-        sameId=buscarId(cli,tam,id);
-        if(sameId!=-1)
+        getString(cli[free].nombre,"\nIngrese Nombre: ","El nombre no debe superar los 25 caracteres",25,0);
+        getString(cli[free].nombre,"\nIngrese Apellido: ","El apellido no debe superar los 25 caracteres",25,0);
+        printf("Ingrese CUIT: ");
+        scanf("%lld",&cli[free].cuit);
+        id=getRandom(1,9999,1);
+        sameId=cli[buscarId(cli,tam,id)].id;
+        while(sameId==id)
         {
-            printf("\nEl ID ingresado ya existe\n");
-            mostrarCliente(cli[sameId]);
+            id=getRandom(1,9999,0);
+            sameId=cli[buscarId(cli,tam,id)].id;
         }
-        else
-        {
+        cli[free].id=id;
+        cli[free].estado=1;
+        printf("La alta del cliente ha sido exitosa. El ID: %d",cli[free].id);
 
-            printf("\nIngrese Nombre: ");
-            fflush(stdin);
-            gets(cli[free].nombre);
-            printf("Ingrese apellido");
-            fflush(stdin);
-            gets(cli[free].apellido);
-            printf("Ingrese CUIT");
-            scanf("%d",&cli[free].cuit);
-            id=getRandom(0,99999,1);
-            sameId=buscarId(cli,tam,id);
-            while(sameId==id)
-            {
-                id=getRandom(0,99999,0);
-                sameId=buscarId(cli,tam,id);
-
-            }
-            cli[free].id=id;
-            printf("La alta del cliente ha sido exitosa. El ID: %d",cli[free].id);
-        }
     }
 }
 void bajaCliente(cliente cli[],int tam)
@@ -82,85 +71,66 @@ void bajaCliente(cliente cli[],int tam)
     }
 
 }
-/*void modificarEmpleado(cliente cli[],int tam)
+void modificarCliente(cliente cli[],int tam)
 {
-    int legajo;
-    int empleado;
+    int id;
+    int cliente;
     int opcion=0;
-    int newLegajo;
-    int sameLegajo;
-    printf("Ingrese el legajo del empleado que desea modificar");
-    scanf("%d",&legajo);
-    empleado=buscarLegajo(emp,tam,legajo);
-    if(empleado==-1)
+    int newId;
+    int sameId;
+    printf("Ingrese el ID del cliente que desea modificar");
+    scanf("%d",&id);
+    cliente=buscarId(cli,tam,id);
+    if(cliente==-1)
     {
-        printf("El empleado seleccionado no existe");
+        printf("El cliente seleccionado no existe");
     }
     else
     {
-        while(opcion!=7)
+        while(opcion!=5)
         {
-            printf("\n\nQue desea modificar (legajo: %d):",emp[empleado].legajo);
-            printf("\n 1. Legajo");
+            printf("\n\nQue desea modificar (ID: %d):",cli[cliente].id);
+            printf("\n 1. ID");
             printf("\n 2. Nombre");
-            printf("\n 3. Sexo");
-            printf("\n 4. Sueldo");
-            printf("\n 5. Fecha de nacimiento");
-            printf("\n 6. ID Sector");
-            printf("\n 7. Volver al menu");
+            printf("\n 3. Apellido");
+            printf("\n 4. CUIT");
+            printf("\n 5. Volver al menu");
             printf("\nSeleccione su opcion:");
             scanf("%d",&opcion);
 
             switch(opcion)
             {
             case 1:
-                printf("Ingrese nuevo legajo: ");
-                scanf("%d",&newLegajo);
-                sameLegajo=buscarLegajo(emp,tam,newLegajo);
-                if(sameLegajo!=-1)
+                printf("Ingrese nuevo id: ");
+                scanf("%d",&newId);
+                sameId=buscarId(cli,tam,newId);
+                if(sameId!=-1)
                 {
-                    printf("\nEl legajo ingresado ya existe\n");
-                    mostrarEmpleado(emp[sameLegajo]);
+                    printf("\nEl ID ingresado ya existe\n");
+                    mostrarCliente(cli[sameId]);
                 }
                 else
                 {
-                    emp[empleado].legajo=newLegajo;
-                    printf("\nEl legajo ha sido modificado con exito!!!\n");
+                    cli[cliente].id=newId;
+                    printf("\nEl ID ha sido modificado con exito!!!\n");
                 }
                 break;
             case 2:
-                printf("Ingrese nuevo nombre: ");
-                fflush(stdin);
-                gets(emp[empleado].nombre);
+                getString(cli[cliente].nombre,"Ingrese nuevo nombre: ","El nombre ingresado no puede superar los 25 caracteres",25,0);
                 printf("\nEl nombre se ha modificado con exito!!!\n");
                 break;
             case 3:
-                printf("Ingrese nuevo sexo: ");
+                printf("Ingrese nuevo apellido: ");
                 fflush(stdin);
-                scanf("%c",&emp[empleado].sexo);
-                printf("\nEl sexo se ha modificado con exito!!!n");
+                getString(cli[cliente].apellido,"Ingrese nuevo apellido: ","El apellido ingresado no puede superar los 25 caracteres",25,0);
+                printf("\nEl apellido se ha modificado con exito!!!\n");
                 break;
-
             case 4:
-                printf("Ingrese nuevo sueldo: ");
-                scanf("%f",&emp[empleado].sueldo);
-                printf("\nEl sueldo se ha modificado con exito!!!n");
+                printf("Ingrese nuevo CUIT: ");
+                scanf("%lld",&cli[cliente].cuit);
+                printf("\nEl CUIT se ha modificado con exito!!!n");
                 break;
             case 5:
-                printf("Ingrese nueva fecha de nacimiento: ");
-                printf("\nDia: ");
-                scanf("%d",&emp[empleado].fechaNac.dia);
-                printf("\nMes: ");
-                scanf("%d",&emp[empleado].fechaNac.mes);
-                printf("\nAnio: ");
-                scanf("%d",&emp[empleado].fechaNac.anio);
-                printf("\n La fecha de nacimiento se ha modificado exitosamente");
-            case 6:
-                printf("Ingrese nuevo ID de Sector: ");
-                scanf("%d",&emp[empleado].idSector);
-                printf("El ID Sector se ha modificado exitosamente!!!");
-                break;
-            case 7:
                 system(("cls"));
                 break;
             default:
@@ -170,7 +140,7 @@ void bajaCliente(cliente cli[],int tam)
         }
     }
 }
-void ordenarEmpleados(cliente cli[],int tam)
+/*void ordenarEmpleados(cliente cli[],int tam)
 {
     int opcion=0;
     while(opcion!=5)
@@ -252,9 +222,27 @@ int buscarId(cliente cli[],int tam,int id)
     }
     return sameId;
 }
+int buscarCliente(cliente cli[],int tam,int id)
+{
+    int cliFound;
+    int i;
+    cliFound=-1;
+    for(i=0;i<tam;i++)
+    {
+        if(id==cli[i].id)
+        {
+            cliFound=i;
+            break;
+        }
+    }
+    return cliFound;
+}
+
+
+
 void mostrarCliente(cliente cli)
 {
-    printf("%5d %20s     %20     %11d        ",cli.id,cli.nombre,cli.apellido,cli.cuit);
+    printf("%5d %20s     %20s     %11lld        ",cli.id,cli.nombre,cli.apellido,cli.cuit);
 }
 /*void mostrarEmpleados(empleado emp[],int tam)
 {
@@ -392,3 +380,33 @@ void ordenarNombres(empleado emp[],int tam)
 }
 
 */
+void printClientes(cliente cli[],int tam,publicacion pub[], int tamPub)
+{
+    printf("\nID               Nombre            Apellido            CUIT    Cant. Pubs");
+    int i;
+    int j;
+    int cantPubs;
+
+    for(i=0;i<tam;i++)
+    {
+
+        cantPubs=0;
+        if(cli[i].estado==1)
+        {
+
+            for(j=0;j<tamPub;j++)
+            {
+                //printf("\nEntro al FOR J");
+                if(pub[j].idCli==cli[i].id && pub[j].estado==1)
+                {
+
+                    cantPubs++;
+                }
+            }
+            printf("\n%4d    %15s     %15s     %lld        %d\n",cli[i].id,cli[i].nombre,cli[i].apellido,cli[i].cuit,cantPubs);
+
+        }
+
+
+    }
+}
