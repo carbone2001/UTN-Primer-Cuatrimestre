@@ -37,9 +37,9 @@ void altaCliente(cliente cli[],int tam)
     {
 
         getString(cli[free].nombre,"\nIngrese Nombre: ","El nombre no debe superar los 25 caracteres",25,0);
-        getString(cli[free].nombre,"\nIngrese Apellido: ","El apellido no debe superar los 25 caracteres",25,0);
+        getString(cli[free].apellido,"\nIngrese Apellido: ","El apellido no debe superar los 25 caracteres",25,0);
         printf("Ingrese CUIT: ");
-        scanf("%lld",&cli[free].cuit);
+        scanf("%d",&cli[free].cuit);
         id=getRandom(1,9999,1);
         sameId=cli[buscarId(cli,tam,id)].id;
         while(sameId==id)
@@ -116,18 +116,18 @@ void modificarCliente(cliente cli[],int tam)
                 }
                 break;
             case 2:
-                getString(cli[cliente].nombre,"Ingrese nuevo nombre: ","El nombre ingresado no puede superar los 25 caracteres",25,0);
+                getString(cli[cliente].nombre,"Ingrese nuevo nombre: ","El nombre ingresado no puede superar los 25 caracteres: ",25,0);
                 printf("\nEl nombre se ha modificado con exito!!!\n");
                 break;
             case 3:
                 printf("Ingrese nuevo apellido: ");
                 fflush(stdin);
-                getString(cli[cliente].apellido,"Ingrese nuevo apellido: ","El apellido ingresado no puede superar los 25 caracteres",25,0);
+                getString(cli[cliente].apellido,"Ingrese nuevo apellido: ","El apellido ingresado no puede superar los 25 caracteres: ",25,0);
                 printf("\nEl apellido se ha modificado con exito!!!\n");
                 break;
             case 4:
                 printf("Ingrese nuevo CUIT: ");
-                scanf("%lld",&cli[cliente].cuit);
+                scanf("%llu",&cli[cliente].cuit);
                 printf("\nEl CUIT se ha modificado con exito!!!n");
                 break;
             case 5:
@@ -380,7 +380,7 @@ void ordenarNombres(empleado emp[],int tam)
 }
 
 */
-void printClientes(cliente cli[],int tam,publicacion pub[], int tamPub)
+void printClientes(cliente cli[],int tam, publicacion pub[], int tamPub)
 {
     printf("\nID               Nombre            Apellido            CUIT    Cant. Pubs");
     int i;

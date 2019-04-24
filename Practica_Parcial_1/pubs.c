@@ -43,7 +43,7 @@ void publicarPub(publicacion pub[],int tamPub,cliente cli[],int tam)
         }
         pub[free].idPub=id;
         pub[free].estado=1;
-        printf("El ID de la publicacion es %0004d",id);
+        printf("El ID de la publicacion es %04d",id);
 
     }
 
@@ -93,7 +93,7 @@ void pausarPub(publicacion pub[],int tamPub,cliente cli[],int tam)
     }
     else
     {
-        printf("\nLa publicacion (ID: %0004d) corresponde al cliente:\n",idPub);
+        printf("\nLa publicacion (ID: %04d) corresponde al cliente:\n",idPub);
         idCliPause=buscarCliente(cli,tam,(pub[pausePub].idCli));
         mostrarCliente(cli[idCliPause]);
         printf("Confirme para pausar la publicacion (s/n)\n");
@@ -127,7 +127,7 @@ void reanudarPub(publicacion pub[],int tamPub,cliente cli[],int tam)
     {
         if(pub[resumePub].estado==0)
         {
-            printf("\nLa publicacion (ID: %0004d) corresponde al cliente:\n",idPub);
+            printf("\nLa publicacion (ID: %4d) corresponde al cliente:\n",idPub);
         idCliResume=buscarCliente(cli,tam,pub[resumePub].idCli);
         mostrarCliente(cli[idCliResume]);
         printf("Confirme para reanudar la publicacion (s/n)\n");

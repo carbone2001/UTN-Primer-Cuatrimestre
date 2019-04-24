@@ -17,7 +17,9 @@ int main()
     publicacion pub[1000]=
     {
         {4573,13009,"Me gustan los trenes",8574,1},
-         {4573,130069,"Me gustan los tkrenes",8374,1},
+        {4573,130069,"Me gustan los tkrenes",5644,1},
+        {3821,13009,"Me gustan los trenes",9353,1},
+        {5493,130069,"Me gustan los tkrenes",4246,1},
     };
 
     //inicializarCliente(cli,100);

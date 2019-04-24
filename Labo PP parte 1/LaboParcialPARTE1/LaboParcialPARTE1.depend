@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1556118785 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\labo pp parte 1\laboparcialparte1\empleados.c
+	"empleados.h"
+
+1556119004 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\labo pp parte 1\laboparcialparte1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"inputs.h"
+	"empleados.h"
+
+1556116328 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\labo pp parte 1\laboparcialparte1\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"inputs.h"
+
+1556119184 c:\users\alumno\desktop\utn-primer-cuatrimestre\labo pp parte 1\laboparcialparte1\inputs.h
+
+1556118821 c:\users\alumno\desktop\utn-primer-cuatrimestre\labo pp parte 1\laboparcialparte1\empleados.h
+
