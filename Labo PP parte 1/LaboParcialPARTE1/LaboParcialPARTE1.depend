@@ -19,3 +19,23 @@
 
 1556118821 c:\users\alumno\desktop\utn-primer-cuatrimestre\labo pp parte 1\laboparcialparte1\empleados.h
 
+1557005322 source:d:\escritorio\utn-primer-cuatrimestre\labo pp parte 1\laboparcialparte1\empleados.c
+	"empleados.h"
+
+1557005322 d:\escritorio\utn-primer-cuatrimestre\labo pp parte 1\laboparcialparte1\empleados.h
+
+1556134985 source:d:\escritorio\utn-primer-cuatrimestre\labo pp parte 1\laboparcialparte1\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"inputs.h"
+
+1556134985 d:\escritorio\utn-primer-cuatrimestre\labo pp parte 1\laboparcialparte1\inputs.h
+
+1556134985 source:d:\escritorio\utn-primer-cuatrimestre\labo pp parte 1\laboparcialparte1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"inputs.h"
+	"empleados.h"
+

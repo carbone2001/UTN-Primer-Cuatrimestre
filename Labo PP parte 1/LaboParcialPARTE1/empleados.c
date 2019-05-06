@@ -1,7 +1,7 @@
 #include "empleados.h"
 void hcdMenu(eMenu menues[],int tamMenu)
 {
-    eMenu menuesHcd[]={1,"Sopa",14,2,"Sanguche",10,3,"Paty",69,4,"Ensalada",43};
+    eMenu menuesHcd[5]={{1,"Sopa",14},{2,"Sanguche",10},{3,"Paty",69},{4,"Ensalada",43}};
     int i;
     for(i=0;i<tamMenu;i++)
     {
@@ -10,10 +10,10 @@ void hcdMenu(eMenu menues[],int tamMenu)
 }
 void hcdEmp(eEmpleados emp[],int tamEmp)
 {
-    eMenu menuesHcd[]={1,"Sopa",14,2,"Sanguche",10,3,"Paty",69,4,"Ensalada",43};
+    eEmpleados empHcd[]={{0001,"Juan","Benitez",'m',{10,01,2001},2,0},{0002,"Alberto","Luis",'m',{19,03,2005},2,0}};
     int i;
-    for(i=0;i<tamMenu;i++)
+    for(i=0;i<tamEmp;i++)
     {
-        menues[i]=menuesHcd[i];
+        emp[i]=empHcd[i];
     }
-
+}

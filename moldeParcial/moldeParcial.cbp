@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Practica_Parcial_1" />
+		<Option title="moldeParcial" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Practica_Parcial_1" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/moldeParcial" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/Practica_Parcial_1" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/moldeParcial" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -31,29 +31,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="clientes.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="clientes.h" />
-		<Unit filename="inputs.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="inputs.h" />
-		<Unit filename="listar.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="listar.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="ordenamientos.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="ordenamientos.h" />
-		<Unit filename="pubs.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="pubs.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

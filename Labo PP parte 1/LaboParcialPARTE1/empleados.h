@@ -31,3 +31,4 @@ typedef struct
     int isEmpty;
 }eEmpleados;
 void hcdMenu(eMenu menues[],int tamMenu);
+void hcdEmp(eEmpleados emp[],int tamEmp);

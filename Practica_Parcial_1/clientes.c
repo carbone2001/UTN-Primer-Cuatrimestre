@@ -39,7 +39,7 @@ void altaCliente(cliente cli[],int tam)
         getString(cli[free].nombre,"\nIngrese Nombre: ","El nombre no debe superar los 25 caracteres",25,0);
         getString(cli[free].apellido,"\nIngrese Apellido: ","El apellido no debe superar los 25 caracteres",25,0);
         printf("Ingrese CUIT: ");
-        scanf("%d",&cli[free].cuit);
+        scanf("%s",cli[free].cuil);
         id=getRandom(1,9999,1);
         sameId=cli[buscarId(cli,tam,id)].id;
         while(sameId==id)
@@ -127,7 +127,7 @@ void modificarCliente(cliente cli[],int tam)
                 break;
             case 4:
                 printf("Ingrese nuevo CUIT: ");
-                scanf("%llu",&cli[cliente].cuit);
+                scanf("%s",cli[cliente].cuil);
                 printf("\nEl CUIT se ha modificado con exito!!!n");
                 break;
             case 5:
@@ -242,7 +242,7 @@ int buscarCliente(cliente cli[],int tam,int id)
 
 void mostrarCliente(cliente cli)
 {
-    printf("%5d %20s     %20s     %11lld        ",cli.id,cli.nombre,cli.apellido,cli.cuit);
+    printf("%5d %20s     %20s     %s        ",cli.id,cli.nombre,cli.apellido,cli.cuil);
 }
 /*void mostrarEmpleados(empleado emp[],int tam)
 {
@@ -380,33 +380,5 @@ void ordenarNombres(empleado emp[],int tam)
 }
 
 */
-void printClientes(cliente cli[],int tam, publicacion pub[], int tamPub)
-{
-    printf("\nID               Nombre            Apellido            CUIT    Cant. Pubs");
-    int i;
-    int j;
-    int cantPubs;
-
-    for(i=0;i<tam;i++)
-    {
-
-        cantPubs=0;
-        if(cli[i].estado==1)
-        {
-
-            for(j=0;j<tamPub;j++)
-            {
-                //printf("\nEntro al FOR J");
-                if(pub[j].idCli==cli[i].id && pub[j].estado==1)
-                {
-
-                    cantPubs++;
-                }
-            }
-            printf("\n%4d    %15s     %15s     %lld        %d\n",cli[i].id,cli[i].nombre,cli[i].apellido,cli[i].cuit,cantPubs);
-
-        }
 
 
-    }
-}
