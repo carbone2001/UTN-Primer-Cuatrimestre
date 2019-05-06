@@ -1,0 +1,61 @@
+# depslib dependency file v1.0
+1557151303 source:d:\carbone\parcial1carbone\autores.c
+	<stdio.h>
+	<stdlib.h>
+	"autores.h"
+
+1557147322 source:d:\carbone\parcial1carbone\fechas.c
+	<stdio.h>
+	<stdlib.h>
+
+1557151347 source:d:\carbone\parcial1carbone\libros.c
+	<stdio.h>
+	<stdlib.h>
+	"libros.h"
+
+1557152093 source:d:\carbone\parcial1carbone\main.c
+	<stdio.h>
+	<stdlib.h>
+	"autores.h"
+	"fechas.h"
+	"libros.h"
+	"prestamos.h"
+	"socios.h"
+
+1557151269 d:\carbone\parcial1carbone\autores.h
+
+1557148592 d:\carbone\parcial1carbone\fechas.h
+	<stdio.h>
+	<stdlib.h>
+
+1557151455 d:\carbone\parcial1carbone\libros.h
+	<stdio.h>
+	<stdlib.h>
+
+1557148499 d:\carbone\parcial1carbone\prestamos.h
+
+1557152965 d:\carbone\parcial1carbone\socios.h
+	"fechas.h"
+
+1557147322 source:d:\carbone\parcial1carbone\prestamos.c
+	<stdio.h>
+	<stdlib.h>
+
+1557153291 source:d:\carbone\parcial1carbone\socios.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"fechas.h"
+	"inputs.h"
+	"socios.h"
+
+1557146862 source:d:\carbone\parcial1carbone\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"inputs.h"
+
+1557146838 d:\carbone\parcial1carbone\inputs.h
+

@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "clientes.h"
-/*void ordAsStructStr(cliente cli[],int tam)
+void ordAsStructStr(cliente cli[],int tam)
 {
     int i;
     int j;
@@ -23,7 +23,7 @@
             }
         }
     }
-}*/
+}
 
 void ordAs(int * nombreVector, int sizeVector)
 {
