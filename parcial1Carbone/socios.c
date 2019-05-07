@@ -33,7 +33,7 @@ void altaSocio(eSocio soc[],int tam,int *codigoSocio)
 
         getString(soc[free].nombre,"\nIngrese Nombre: ","El nombre no debe superar los 30 caracteres",31,0);
         getString(soc[free].apellido,"\nIngrese Apellido: ","El apellido no debe superar los 30 caracteres",31,0);
-        soc[free].sexo=getChar("\nIngrese sexo");
+        soc[free].sexo=getCharSex("\nIngrese sexo");
         while(soc[free].sexo=='0')
         {
             soc[free].sexo=getChar("\nSexo invalido!!. Ingrese sexo nuevamente: ");
@@ -156,19 +156,19 @@ void bajaSocio(eSocio soc[],int tam,int *codigoSocio)
     if(*codigoSocio>0)
     {
         int codigo;
-    int socio;
-    printf("\nIngrese codigo del socio para dar de baja: ");
-    scanf("%d",&codigo);
-    socio=buscarCodSoc(soc,tam,codigo);
-    if(socio==-1)
-    {
-        printf("El socio seleccionado no existe");
-    }
-    else
-    {
-        soc[socio].estado=0;
-        printf("El socio de codigo: %d fue dado de baja con exito!!!",soc[socio].codigo);
-    }
+        int socio;
+        printf("\nIngrese codigo del socio para dar de baja: ");
+        scanf("%d",&codigo);
+        socio=buscarCodSoc(soc,tam,codigo);
+        if(socio==-1)
+        {
+            printf("El socio seleccionado no existe");
+        }
+        else
+        {
+            soc[socio].estado=0;
+            printf("El socio de codigo: %d fue dado de baja con exito!!!",soc[socio].codigo);
+        }
 
     }
     else
@@ -177,41 +177,59 @@ void bajaSocio(eSocio soc[],int tam,int *codigoSocio)
     }
 
 }
-void listarSocios(eSocio soc[],int tamSoc)
+void listarSocios(eSocio soc[],int tamSoc,int *codigoSocio)
 {
-    ordAsStructStr(soc,tamSoc);
-    printf("\nID               Apellido            Nombre            Codigo    Sexo   Telefono  eMail  Fecha de asociacion");
-    int i;
-
-    for(i=0; i<tamSoc; i++)
+    if(*codigoSocio>0)
     {
-        if(soc[i].estado==1)
+        ordAsStructStrSoc(soc,tamSoc);
+        printf("\n Apellido   Nombre   Codigo Sexo     Telefono                         eMail    Fecha de asociacion");
+        int i;
+
+        for(i=0; i<tamSoc; i++)
         {
-            printf("\n%s    %s     %d     %s        %s\n",soc[i].apellido,soc[i].nombre,soc[i].codigo,soc[i].telefono,soc[i].eMail);
+            if(soc[i].estado==1)
+            {
+                printf("\n%s    %s     %d     %c         %s        %s  %2d/%2d/%2d\n",soc[i].apellido,soc[i].nombre,soc[i].codigo,soc[i].sexo,soc[i].telefono,soc[i].eMail,soc[i].fechaAsoc.dia,soc[i].fechaAsoc.mes,soc[i].fechaAsoc.anio);
 
+            }
         }
-
-
     }
+    else
+    {
+        printf("ERROR. Debe haber al menos un alta de socio");
+    }
+
 }
-void ordAsStructStr(eSocio soc[],int tam)
+void ordAsStructStrSoc(eSocio soc[],int tam)
 {
     int i;
     int j;
     eSocio aux;
-    for(i=0;i<tam;i++)
+    for(i=0; i<tam; i++)
     {
         strlwr(soc[i].nombre);
     }
-    for(i=0;i<tam;i++)
+    for(i=0; i<tam; i++)
     {
         strlwr(soc[i].apellido);
     }
-    for(i=0;i<tam-1;i++)
+    for(i=0; i<tam-1; i++)
     {
-        for(j=i+1;j<tam;j++)
+        for(j=i+1; j<tam; j++)
         {
-            if((strcmp(soc[i].nombre,soc[j].nombre))>0 && (soc[i].estado==1 && soc[j].estado==1))
+            if((strcmp(soc[i].apellido,soc[j].apellido))>0 && (soc[i].estado==1 && soc[j].estado==1))
+            {
+                aux=soc[i];
+                soc[i]=soc[j];
+                soc[j]=aux;
+            }
+        }
+    }
+    for(i=0; i<tam-1; i++)
+    {
+        for(j=i+1; j<tam; j++)
+        {
+            if((strcmp(soc[i].nombre,soc[j].nombre))>0 && (soc[i].estado==1 && soc[j].estado==1) && (strcmp(soc[i].apellido,soc[j].apellido))==0)
             {
                 aux=soc[i];
                 soc[i]=soc[j];

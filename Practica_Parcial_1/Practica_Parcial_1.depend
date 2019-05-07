@@ -90,7 +90,7 @@
 	"clientes.h"
 	"inputs.h"
 
-1557007750 source:d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\clientes.c
+1557159752 source:d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\clientes.c
 	<ctype.h>
 	<string.h>
 	<conio.h>
@@ -100,34 +100,34 @@
 	"inputs.h"
 	"pubs.h"
 
-1557078585 d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\clientes.h
+1557159752 d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\clientes.h
 
-1556134985 d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\inputs.h
+1557159752 d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\inputs.h
 
-1557092362 d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\pubs.h
+1557159752 d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\pubs.h
 	"clientes.h"
 
-1556134985 source:d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\inputs.c
+1557159752 source:d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\inputs.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<string.h>
 	"inputs.h"
 
-1557092462 source:d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\main.c
+1557159752 source:d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"clientes.h"
 	"pubs.h"
 	"listar.h"
 
-1556134985 source:d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\ordenamientos.c
+1557159752 source:d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\ordenamientos.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
 	"clientes.h"
 
-1556134985 source:d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\pubs.c
+1557159752 source:d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\pubs.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>
@@ -136,7 +136,7 @@
 	"clientes.h"
 	"inputs.h"
 
-1557090788 source:d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\listar.c
+1557251531 source:d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\listar.c
 	<stdio.h>
 	<stdlib.h>
 	"inputs.h"
@@ -144,7 +144,7 @@
 	"pubs.h"
 	"listar.h"
 
-1557133064 d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\listar.h
+1557159752 d:\escritorio\utn-primer-cuatrimestre\practica_parcial_1\listar.h
 
 1557133285 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\practica_parcial_1\listar.c
 	<stdio.h>

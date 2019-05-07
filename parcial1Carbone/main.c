@@ -9,20 +9,27 @@
 
 int main()
 {
+
+    eSocio soc[100]=
+    {
+        {1,"SURNAME1","NAME1",'M',"42131234","NAME.SURNAME@mail.com",{01,01,2001},1},
+        {2,"SURNAME1","NAME2",'M',"42131234","NAME.SURNAME@mail.com",{01,01,2001},1},
+        {3,"SURNAME1","NAME3",'M',"42131234","NAME.SURNAME@mail.com",{01,01,2001},1},
+        {4,"SURNAME2","NAME3",'M',"42131234","NAME.SURNAME@mail.com",{01,01,2001},1},
+        {5,"SURNAME2","NAME5",'M',"42131234","NAME.SURNAME@mail.com",{01,01,2001},1},
+        {6,"SURNAME2","NAME1",'M',"42131234","NAME.SURNAME@mail.com",{01,01,2001},1},
+    };
     eAutor aut[100];
-    int codigoSoc=0;
+    int codigoSoc;
+    int codigoPres;
     eLibro lib[100];
+    inicializarLibros(lib,100);
     hcdAut(aut,100);
     hcdLib(lib,100);
-
-    //int codigoLib;
-    //int codigoAut;
-    //int codigoPres;
-    //eAutor aut[100];
-    //eLibro lib[100];
-    eSocio soc[100];
-    //ePrestamo pres[100];
+    ePrestamo pres[100];
     int opcion;
+    codigoSoc=6;
+    codigoPres=0;
 
     do
     {
@@ -39,16 +46,17 @@ int main()
             bajaSocio(soc,100,&codigoSoc);
             break;
         case 4:
-            //listarSocio;
+            listarSocios(soc,100,&codigoSoc);
             break;
         case 5:
-            //listarLibros;
+            listarLibros(lib,100);
             break;
         case 6:
-            //listarAutores;
+            listarAutores(aut,100);
             break;
         case 7:
-            //prestamos;
+            prestamos(pres,&codigoPres,lib,100,soc,100);
+
             break;
         default:
             printf("Opcion invalida");

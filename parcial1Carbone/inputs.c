@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <ctype.h>
 #include "inputs.h"
+#include "libros.h"
 int getIntIntentos(int* input,char* msj,char* eMsj,int minimo,int maximo,int reintentos)
 {
     int i;
@@ -16,7 +18,7 @@ int getIntIntentos(int* input,char* msj,char* eMsj,int minimo,int maximo,int rei
     {
         if(reintentos)
         {
-            for(i=0;i<reintentos;i++)
+            for(i=0; i<reintentos; i++)
             {
                 printf("%s",eMsj);
                 scanf("%d",&num);
@@ -46,6 +48,7 @@ int getIntIntentos(int* input,char* msj,char* eMsj,int minimo,int maximo,int rei
     }
     else
     {
+
         *input=num;
     }
     return error;
@@ -59,18 +62,7 @@ int getInt(char * msj) //TERMINAR
 
     return aux;
 }
-void getIntPlus(int*input,char*msj,char*eMsj,int minimo,int maximo) //TERMINAR
-{
-    int aux;
-    printf("%s",msj);
-    scanf("%d",input);
-    if(aux>maximo || aux<minimo)
-    {
-        printf("%s",eMsj);
-        //scanf("%d",input);
-    }
-    return aux;
-}
+
 int getRandom(int primerNumero, int ultimoNumero,int primeraVez)
 {
     if(primeraVez)
@@ -96,17 +88,7 @@ char getChar(char*msj)
     }
     return confirmacion;
 }
-/*void getFloatPlus(float*input,char*msj,char*eMsj,float minimo,float maximo) //TERMINAR
-{
-    float aux;
-    printf("%s",msj);
-    scanf("%f",input);
-    while(aux>maximo || aux<minimo)
-    {
-        printf("%s",eMsj);
-        scanf("%f",input);
-    }
-}*/
+
 int getString(char str[],char*msj,char*eMsj,int limite,int intentos)
 {
     int error;
@@ -188,7 +170,7 @@ int getCuil(char cuil[],int guion)
         }
         else
         {
-            for(i=0;i<=12;i++)
+            for(i=0; i<=12; i++)
             {
                 if(i<2)
                 {
@@ -204,7 +186,7 @@ int getCuil(char cuil[],int guion)
                 }
                 if(i>11)
                 {
-                  cuil[i]=auxCuit[i-2];
+                    cuil[i]=auxCuit[i-2];
                 }
             }
         }

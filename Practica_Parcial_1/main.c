@@ -34,7 +34,7 @@ int main()
     };
 
     //inicializarCliente(cli,100);
-    //inicializarPubs(pub,100);
+    //inicializarPubs(pub,1000);
     while(opcion==0)
     {
         switch(menu())

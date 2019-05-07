@@ -234,7 +234,7 @@ void clienteMasAvisosPausados(cliente cli[],int tam,publicacion pub[],int tamPub
         }
 
     }
-    printf("\nEl cliente con mayor avisos activos:");
+    printf("\nEl cliente con mayor avisos pausados:");
     printf("\n %s    %s     %s    cantidad de avisos pausados: %d",cli[cliente].nombre,cli[cliente].apellido,cli[cliente].cuil,cli[cliente].avisosActivos);
 }
 void informarPublicaciones(publicacion pub[],int tamPub,eRubro rubros[],int tamRub)
