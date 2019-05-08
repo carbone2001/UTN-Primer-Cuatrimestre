@@ -3,7 +3,7 @@
 #define SOCIOS_H_INCLUDED
 #ifndef LIBROS_H_INCLUDED
 #define LIBROS_H_INCLUDED
-
+//#include "prestamos.h"
 typedef struct
 {
     int codigo;
@@ -15,3 +15,5 @@ typedef struct
 //void prestamos(ePrestamo pres[],int *codPres,eLibro lib[],int tamLib,eSocio soc[],int tamSoc);
 #endif // LIBROS_H_INCLUDED
 #endif // SOCIOS_H_INCLUDED
+
+

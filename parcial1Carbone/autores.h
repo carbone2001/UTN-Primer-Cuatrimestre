@@ -22,7 +22,7 @@ void hcdAut(eAutor aut[],int tamAut);
  * \return void
  *
  */
-void listarAutores(eAutor aut[],int tamAut);
+void listarAutores(eAutor aut[],int tamAut,int *codigoSocio);
 /** \brief Ordena vector eAutor por apellido y nombre
  *
  * \param aut[] eAutor Es la estructura a ordenar

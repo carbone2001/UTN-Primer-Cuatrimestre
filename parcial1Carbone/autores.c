@@ -14,25 +14,35 @@ void hcdAut(eAutor aut[],int tamAut)
         {1004,"name4","surname4",1},
         {1005,"name5","surname5",1},
     };
-    for(i=0;i<tamAut;i++)
+    for(i=0; i<tamAut; i++)
     {
         aut[i]=autHcd[i];
     }
 }
-void listarAutores(eAutor aut[],int tamAut)
+void listarAutores(eAutor aut[],int tamAut,int *codigoSocio)
 {
     int j;
-    ordAsStructStrAut(aut,tamAut);
-    printf("Codigo de autor    Apellido         Nombre");
-    for(j=0;j<tamAut;j++)
+    if(*codigoSocio>0)
     {
-        if(aut[j].estado)
+        ordAsStructStrAut(aut,tamAut);
+        printf("Codigo de autor    Apellido         Nombre");
+        for(j=0; j<tamAut; j++)
         {
-            printf("\n%d                %s         %s\n",aut[j].cod,aut[j].apellido,aut[j].nombre);
+            if(aut[j].estado)
+            {
+                printf("\n%d                %s         %s\n",aut[j].cod,aut[j].apellido,aut[j].nombre);
+            }
+
+
         }
 
-
     }
+    else
+    {
+        printf("ERROR. Debe haberse dado de alta por lo menos un socio");
+    }
+
+
 }
 void ordAsStructStrAut(eAutor aut[],int tamAut)
 {

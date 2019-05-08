@@ -23,7 +23,7 @@ void hcdLib(eLibro lib[],int tamLib);
  * \return void
  *
  */
-void listarLibros(eLibro lib[],int tamLib);
+void listarLibros(eLibro lib[],int tamLib,int *codigoSocio);
 /** \brief Ordena vector eLibro por titulo
  *
  * \param lib[] eLibro Es la estructura a ordenar

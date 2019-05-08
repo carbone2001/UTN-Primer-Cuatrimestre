@@ -14,38 +14,48 @@ void hcdLib(eLibro lib[],int tamLib)
     };
 
     int i;
-    for(i=0;i<tamLib;i++)
+    for(i=0; i<tamLib; i++)
     {
         lib[i]=libHcd[i];
     }
 }
-void listarLibros(eLibro lib[],int tamLib)
+void listarLibros(eLibro lib[],int tamLib,int *codigoSocio)
 {
     int j;
-    ordAsStructStrLib(lib,tamLib);
-    printf("Codigo de libro    Titulo         Codigo de Autor");
-    for(j=0;j<tamLib;j++)
+    if(*codigoSocio>0)
     {
-        if(lib[j].estado)
+        ordAsStructStrLib(lib,tamLib);
+        printf("Codigo de libro    Titulo         Codigo de Autor");
+        for(j=0; j<tamLib; j++)
         {
-            printf("\n%d                %s         %d\n",lib[j].cod,lib[j].titulo,lib[j].codAutor);
+            if(lib[j].estado)
+            {
+                printf("\n%d                %s         %d\n",lib[j].cod,lib[j].titulo,lib[j].codAutor);
+            }
+
+
         }
 
-
     }
+    else
+    {
+        printf("ERROR. Debe haberse dado de alta por lo menos un socio");
+    }
+
+
 }
 void ordAsStructStrLib(eLibro lib[],int tamLib)
 {
     int i;
     int j;
     eLibro aux;
-    for(i=0;i<tamLib;i++)
+    for(i=0; i<tamLib; i++)
     {
         strlwr(lib[i].titulo);
     }
-    for(i=0;i<tamLib-1;i++)
+    for(i=0; i<tamLib-1; i++)
     {
-        for(j=i+1;j<tamLib;j++)
+        for(j=i+1; j<tamLib; j++)
         {
             if((strcmp(lib[i].titulo,lib[j].titulo))>0 && (lib[i].estado==1 && lib[j].estado==1))
             {

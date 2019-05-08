@@ -1,24 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "autores.h"
-#include "fechas.h"
-#include "libros.h"
-#include "prestamos.h"
 #include "socios.h"
 
 
 int main()
 {
     eSocio soc[100];
-    /*eSocio soc[100]=
-    {
-        {1,"SURNAME1","NAME1",'M',"42131234","NAME.SURNAME@mail.com",{01,01,2001},1},
-        {2,"SURNAME1","NAME2",'M',"42131234","NAME.SURNAME@mail.com",{01,01,2001},1},
-        {3,"SURNAME1","NAME3",'M',"42131234","NAME.SURNAME@mail.com",{01,01,2001},1},
-        {4,"SURNAME2","NAME3",'M',"42131234","NAME.SURNAME@mail.com",{01,01,2001},1},
-        {5,"SURNAME2","NAME5",'M',"42131234","NAME.SURNAME@mail.com",{01,01,2001},1},
-        {6,"SURNAME2","NAME1",'M',"42131234","NAME.SURNAME@mail.com",{01,01,2001},1},
-    };*/
     eAutor aut[100];
     int codigoSoc;
     int codigoPres;
@@ -55,7 +42,31 @@ int main()
             listarAutores(aut,100,&codigoSoc);
             break;
         case 7:
-            prestamos(pres,&codigoPres,lib,100,soc,100);
+            prestamos(pres,&codigoPres,lib,100,soc,100,&codigoSoc);
+            break;
+        case 8:
+            sociosSolicitaronPrestamoLibro(soc,100,pres,100,&codigoSoc);
+            break;
+        case 9:
+            librosPrestadosSocioDeterminado(lib,100,pres,100,&codigoSoc);
+            break;
+        case 10:
+            listarLibroMenosSolicitado(lib,100,pres,100,&codigoSoc);
+            break;
+        case 11:
+            listarSocioMasPrestamos(soc,100,pres,100,&codigoSoc);
+            break;
+        case 12:
+            listarLibroFechaDeterminda(lib,100,pres,100,&codigoSoc);
+            break;
+        case 13:
+            listarSociosPrestamoFechaDeterminada(soc,100,pres,100,&codigoSoc);
+            break;
+        case 14:
+            ordSocioApellido(soc,100,&codigoSoc);
+            break;
+        case 15:
+            ordLibTit(lib,100,&codigoSoc);
             break;
         default:
             printf("Opcion invalida");
@@ -68,3 +79,4 @@ int main()
     while(opcion);
     return 0;
 }
+
