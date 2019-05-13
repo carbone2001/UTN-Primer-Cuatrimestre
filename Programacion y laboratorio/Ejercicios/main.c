@@ -1,59 +1,87 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define TAM 5
-#define TAM_SEC 4
 #include <ctype.h>
 #include <string.h>
 #include <conio.h>
+#include <windows.h>
 #include "biblioteca.h"
+void mostrarVector1(int vec[],int tam); //Ultiliza vectores muestra con vectores
+void mostrarVector2(int vec[],int tam); //Ultiliza vectores muestra con punters
+void mostrarVector3(int* vec,int tam); //Ultiliza punteros muestra con punteros
+void mostrarVector4(int* vec,int tam); //Ultiliza punteros muestra con vectores
+void mostrarCadena(char* cadena);
 int main()
 {
-    char salir='n';
-    int selecSec;
-    empleado emp[TAM]= {{1423,"Juan",'m',13500,{1,10,1998},19002,1},{1001,"Lucas",'m',65000,{10,01,2001},19001,1},{6543,"Sol",'f',32000,{23,04,1999},19002,1},{3265,"Alberto",'m',15437.78,{15,06,1989},19004,1},{2876,"Cristal",'f',45700.65,{21,11,2000},19003,1}};
-    eSector sectores[TAM_SEC] = {{19001,"Ventas"},{19002,"Finanzas"},{19003,"Sistemas"},{19004,"RRHH"}};
-    //inicializarEmpleados(emp,TAM);
+    int x[6] = {10,5,4,6,3};
+    int *p;
+    char nombre[]="\nSebastian";
+    //int ** r;
+    //p=&x;
+    //r=&p;
+    mostrarVector1(x,5);
+    mostrarVector2(x,5);
+    mostrarVector3(x,5);
+    mostrarVector4(x,5);
+    mostrarCadena(nombre);
 
-    while(salir!='s')
-    {
-        switch(menu())
-        {
-        case 1:
-            altaEmpleado(emp,TAM);
-            break;
-        case 2:
-            bajaEmpleado(emp,TAM);
-            break;
-        case 3:
-            modificarEmpleado(sectores,TAM_SEC,emp,TAM);
-            break;
-        case 4:
-            printf("Legajo     Nombre     Sexo       Sueldo    Fecha de nacimiento");
-            mostrarEmpleados(sectores,TAM_SEC,emp,TAM);
-            break;
-        case 5:
-            ordenarEmpleados(emp,TAM);
-            break;
-        /*case 7:
-            listarSectores(sectores,TAM_SEC,selecSec,emp,TAM);
-            break;*/
-        case 6:
-            listarSectores(sectores,TAM_SEC,emp,TAM);
-            printf("Ingrese el sector que desee listar en particular: ");
-            scanf("%d",&selecSec);
-            listarSector(sectores,TAM_SEC,selecSec,emp,TAM);
-            break;
-        case 7:
-            cantidadEmpSector(sectores,TAM_SEC,emp,TAM);
-            break;
 
-        case 8:
-            printf("Seguro que quiere salir? s/n \n");
-            salir=getche();
-            salir=tolower(salir);
-            system(("cls"));
-            break;
-        }
-    }
+
+
+
     return 0;
+
+}
+void mostrarVector1(int vec[],int tam)
+{
+    printf("Motrar vector 1: ");
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        printf(" %d",*(vec+i));
+    }
+
+}
+void mostrarVector2(int vec[],int tam)
+{
+    printf("\nMotrar vector 2: ");
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        printf(" %d",vec[i]);
+    }
+}
+void mostrarVector3(int* vec,int tam)
+{
+    printf("\nMotrar vector 3: ");
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        printf(" %d",*(vec+i));
+    }
+
+}
+void mostrarVector4(int* vec,int tam)
+{
+    printf("\nMotrar vector 4: ");
+    int i;
+    for(i=0;i<tam;i++)
+    {
+        printf(" %d", vec[i]);
+    }
+
+}
+void mostrarCadena(char* cadena)
+{
+    int i;
+    for(i=0;*(cadena+i)!= '\0';i++)
+    {
+        printf("%c",*(cadena+i));
+    }
+    /*
+    while(*cadena!='\0')
+    {
+        printf("%c",*cadena);
+        cadena++;
+    }*/
+
 }
