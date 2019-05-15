@@ -16,9 +16,27 @@ typedef struct
     float sueldo;
     eFecha fechaIngreso;
 }eEmpleado;
+
+void mostrarCadena2(char* punteroCadena);
 int main()
 {
-    eEmpleado unEmpleado = {1234,"Juan",'m',30000,{1,1,2011}};
+    int a=3;
+    int* punteroInt=&a;
+    int** punteroPuntero=&punteroInt;
+    printf("\n%d",**punteroPuntero);
+    printf("\n%d",*punteroInt);
+
+
+
+
+
+    /*char letra='a';
+    char palabra[]="Hola";
+    mostrarCadena2(palabra);*/
+
+
+
+    /*eEmpleado unEmpleado = {1234,"Juan",'m',30000,{1,1,2011}};
     eEmpleado otroEmpleado = {4321,"Ana",'f',20000,{10,10,2019}};
     eEmpleado lista[] = {unEmpleado,otroEmpleado};
     eEmpleado* punteroEmpleado;
@@ -31,6 +49,17 @@ int main()
     for(i=0;i<2;i++)
     {
          printf("\nNombre: %s", (lista+i)->nombre);
-    }
+    }*/
+
     return 0;
+}
+void mostrarCadena2(char* punteroCadena)
+{
+    int i;
+    i=0;
+    while(*(punteroCadena+i) != '\0')
+    {
+        printf("\n%c    %p",*(punteroCadena+i),punteroCadena);
+        i++;
+    }
 }
