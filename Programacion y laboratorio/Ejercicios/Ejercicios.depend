@@ -1,7 +1,40 @@
 # depslib dependency file v1.0
-1554301629 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\main.c
+1557769810 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\main.c
 	<stdio.h>
 	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<conio.h>
+	<windows.h>
+	"biblioteca.h"
+
+1555535824 source:c:\users\lucas\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<conio.h>
+	"biblioteca.h"
+
+1557761384 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\biblioteca.c
+	<ctype.h>
+	<string.h>
+	<conio.h>
+	<stdio.h>
+	<stdlib.h>
+	"biblioteca.h"
+
+1557761389 c:\users\alumno\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\biblioteca.h
+
+1555619237 source:c:\users\lucas\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\biblioteca.c
+	<ctype.h>
+	<string.h>
+	<conio.h>
+	<stdio.h>
+	<stdlib.h>
+	"biblioteca.h"
+
+1555535698 c:\users\lucas\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\biblioteca.h
 
 1554329380 source:c:\users\lucas\desktop\utn-primer-cuatrimestre\programacion y laboratorio\ejercicios\funcionesejercicios.c
 
