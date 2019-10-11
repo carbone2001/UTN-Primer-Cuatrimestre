@@ -1,0 +1,265 @@
+# depslib dependency file v1.0
+1557316172 source:d:\carbone\parcial1carbone\autores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"autores.h"
+
+1557314903 source:d:\carbone\parcial1carbone\fechas.c
+
+1557316261 source:d:\carbone\parcial1carbone\libros.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"libros.h"
+
+1557318804 source:d:\carbone\parcial1carbone\main.c
+	<stdio.h>
+	<stdlib.h>
+	"autores.h"
+	"fechas.h"
+	"libros.h"
+	"prestamos.h"
+	"socios.h"
+
+1557316218 d:\carbone\parcial1carbone\autores.h
+
+1557314903 d:\carbone\parcial1carbone\fechas.h
+	<stdio.h>
+	<stdlib.h>
+
+1557316172 d:\carbone\parcial1carbone\libros.h
+	<stdio.h>
+	<stdlib.h>
+
+1557318396 d:\carbone\parcial1carbone\prestamos.h
+	"fechas.h"
+
+1557319055 d:\carbone\parcial1carbone\socios.h
+	"fechas.h"
+	"prestamos.h"
+
+1557316756 source:d:\carbone\parcial1carbone\prestamos.c
+	<stdio.h>
+	<stdlib.h>
+	"prestamos.h"
+	"libros.h"
+	"inputs.h"
+	"socios.h"
+	"prestamos.h"
+
+1557318755 source:d:\carbone\parcial1carbone\socios.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"fechas.h"
+	"inputs.h"
+	"socios.h"
+
+1557316902 source:d:\carbone\parcial1carbone\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+	"inputs.h"
+	"libros.h"
+
+1557316853 d:\carbone\parcial1carbone\inputs.h
+	<stdio.h>
+	<stdlib.h>
+
+1557165650 source:d:\escritorio\utn-primer-cuatrimestre\parcial1carbone\autores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"autores.h"
+
+1557170258 d:\escritorio\utn-primer-cuatrimestre\parcial1carbone\autores.h
+
+1557168640 source:d:\escritorio\utn-primer-cuatrimestre\parcial1carbone\fechas.c
+
+1557171916 source:d:\escritorio\utn-primer-cuatrimestre\parcial1carbone\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+	"inputs.h"
+	"libros.h"
+
+1557171870 d:\escritorio\utn-primer-cuatrimestre\parcial1carbone\inputs.h
+
+1557166995 source:d:\escritorio\utn-primer-cuatrimestre\parcial1carbone\libros.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"libros.h"
+
+1557171810 d:\escritorio\utn-primer-cuatrimestre\parcial1carbone\libros.h
+	<stdio.h>
+	<stdlib.h>
+
+1557171510 source:d:\escritorio\utn-primer-cuatrimestre\parcial1carbone\prestamos.c
+	<stdio.h>
+	<stdlib.h>
+	"prestamos.h"
+	"libros.h"
+	"inputs.h"
+	"socios.h"
+
+1557170258 source:d:\escritorio\utn-primer-cuatrimestre\parcial1carbone\socios.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"fechas.h"
+	"inputs.h"
+	"socios.h"
+
+1557168785 d:\escritorio\utn-primer-cuatrimestre\parcial1carbone\fechas.h
+	<stdio.h>
+	<stdlib.h>
+
+1557171510 d:\escritorio\utn-primer-cuatrimestre\parcial1carbone\socios.h
+	"fechas.h"
+
+1557172098 source:d:\escritorio\utn-primer-cuatrimestre\parcial1carbone\main.c
+	<stdio.h>
+	<stdlib.h>
+	"autores.h"
+	"fechas.h"
+	"libros.h"
+	"prestamos.h"
+	"socios.h"
+
+1557171925 d:\escritorio\utn-primer-cuatrimestre\parcial1carbone\prestamos.h
+	"fechas.h"
+
+1557316172 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\parcial1carbone\autores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"autores.h"
+
+1557316218 c:\users\alumno\desktop\utn-primer-cuatrimestre\parcial1carbone\autores.h
+
+1557314903 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\parcial1carbone\fechas.c
+
+1557314903 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\parcial1carbone\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+	"inputs.h"
+	"libros.h"
+
+1557314903 c:\users\alumno\desktop\utn-primer-cuatrimestre\parcial1carbone\inputs.h
+
+1557316172 c:\users\alumno\desktop\utn-primer-cuatrimestre\parcial1carbone\libros.h
+	<stdio.h>
+	<stdlib.h>
+
+1557316261 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\parcial1carbone\libros.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"libros.h"
+
+1557316172 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\parcial1carbone\main.c
+	<stdio.h>
+	<stdlib.h>
+	"autores.h"
+	"fechas.h"
+	"libros.h"
+	"prestamos.h"
+	"socios.h"
+
+1557314903 c:\users\alumno\desktop\utn-primer-cuatrimestre\parcial1carbone\fechas.h
+	<stdio.h>
+	<stdlib.h>
+
+1557315619 c:\users\alumno\desktop\utn-primer-cuatrimestre\parcial1carbone\prestamos.h
+	"fechas.h"
+
+1557314903 c:\users\alumno\desktop\utn-primer-cuatrimestre\parcial1carbone\socios.h
+	"fechas.h"
+
+1557315660 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\parcial1carbone\prestamos.c
+	<stdio.h>
+	<stdlib.h>
+	"prestamos.h"
+	"libros.h"
+	"inputs.h"
+	"socios.h"
+
+1557314903 source:c:\users\alumno\desktop\utn-primer-cuatrimestre\parcial1carbone\socios.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"fechas.h"
+	"inputs.h"
+	"socios.h"
+
+1557319393 source:d:\carbone\parcial1carbone - copia\autores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"autores.h"
+
+1557319458 d:\carbone\parcial1carbone - copia\autores.h
+
+1557314903 source:d:\carbone\parcial1carbone - copia\fechas.c
+
+1557316902 source:d:\carbone\parcial1carbone - copia\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<ctype.h>
+	"inputs.h"
+	"libros.h"
+
+1557316853 d:\carbone\parcial1carbone - copia\inputs.h
+	<stdio.h>
+	<stdlib.h>
+
+1557319308 d:\carbone\parcial1carbone - copia\libros.h
+
+1557319308 source:d:\carbone\parcial1carbone - copia\libros.c
+
+1557326701 source:d:\carbone\parcial1carbone - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	"socios.h"
+
+1557319104 d:\carbone\parcial1carbone - copia\fechas.h
+	<stdio.h>
+	<stdlib.h>
+
+1557319531 d:\carbone\parcial1carbone - copia\prestamos.h
+
+1557327167 d:\carbone\parcial1carbone - copia\socios.h
+	"fechas.h"
+	"prestamos.h"
+
+1557319333 source:d:\carbone\parcial1carbone - copia\prestamos.c
+	<stdio.h>
+	<stdlib.h>
+	"prestamos.h"
+	"libros.h"
+	"inputs.h"
+	"socios.h"
+	"prestamos.h"
+
+1557327167 source:d:\carbone\parcial1carbone - copia\socios.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"inputs.h"
+	"socios.h"
+
